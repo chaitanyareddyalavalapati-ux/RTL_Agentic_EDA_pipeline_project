@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RTL Agentic EDA</title>
+<link rel="stylesheet" href="/static/style.css?v=20260929-1">
+</head>
+<body>
+<main>
+
+<header>
+  <div>
+    <div class="eyebrow">LOCAL AI &times; EDA</div>
+    <h1>RTL Agentic EDA</h1>
+    <p>Describe hardware in plain English and watch the agent verify it.</p>
+  </div>
+  <div id="status" class="badge idle">IDLE</div>
+</header>
+
+<section class="card">
+  <label>Design request</label>
+  <textarea id="prompt">Create a 4 bit adder and run the complete EDA flow.</textarea>
+  <div class="row">
+    <button id="run">Run Pipeline</button>
+    <span class="hint">Ctrl/&#8984; + Enter</span>
+    <span id="job" class="mono"></span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="title">
+    <h2>Saved pipeline runs</h2>
+    <button id="refreshJobs" class="ghost">Refresh</button>
+  </div>
+  <div id="history">Loading...</div>
+</section>
+
+<section class="card">
+  <div class="title">
+    <h2>Pipeline</h2>
+    <div class="actions">
+      <span id="conn" class="conn idle">Idle</span>
+      <span id="elapsed" class="mini"></span>
+      <span id="progress" class="progress-text">0 / 8</span>
+      <button id="refreshPipeline" class="ghost">Refresh</button>
+    </div>
+  </div>
+  <div class="bar"><div id="bar" class="bar-fill"></div></div>
+  <div id="steps" class="steps"></div>
+  <div id="detail" class="detail" hidden></div>
+</section>
+
+<section class="grid">
+  <section class="card">
+    <div class="title">
+      <h2>Agent activity / failure verification</h2>
+      <span id="eventCount" class="mini"></span>
+    </div>
+    <div id="agent"></div>
+  </section>
+  <section class="card">
+    <div class="title">
+      <h2>Live tool logs</h2>
+      <div class="actions">
+        <input id="logFilter" class="filter" placeholder="Filter logs...">
+        <label class="check"><input type="checkbox" id="autoscroll" checked> Follow</label>
+      </div>
+    </div>
+    <pre id="logs"></pre>
+  </section>
+</section>
+
+<section class="card artifact-board">
+  <div class="title">
+    <h2>Design review board</h2>
+    <div class="actions">
+      <button class="tab active" data-tab="rtl">1 · RTL</button>
+      <button class="tab" data-tab="tb">2 · Testbench</button>
+      <button class="tab" data-tab="simulation">3 · Simulation</button>
+      <button class="tab" data-tab="netlistText">4 · Netlist</button>
+      <button class="tab" data-tab="netlist">Netlist image</button>
+      <button class="tab" data-tab="sta">5 · OpenSTA</button>
+      <button class="tab" data-tab="physical">Physical design</button>
+      <button class="tab" data-tab="physicalImage">Physical image</button>
+      <button class="tab" data-tab="report">Report</button>
+      <button id="copyArtifact" class="ghost">Copy</button>
+    </div>
+  </div>
+  <div id="artifactSummary" class="artifact-summary"></div>
+  <div id="artifactLabel" class="artifact-label">RTL source</div>
+  <div id="artifactStats" class="timing-stats" hidden></div>
+  <img id="artifactImage" alt="Post-synthesis netlist" hidden>
+  <pre id="artifact"></pre>
+</section>
+
+</main>
+<script src="/static/app.js?v=20260929-2"></script>
+</body>
+</html>

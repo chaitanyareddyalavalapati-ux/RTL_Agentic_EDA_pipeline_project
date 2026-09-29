@@ -1,0 +1,12 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+httpx>=0.27
+pydantic>=2.8
+python-dotenv>=1.0
+cocotb>=2.0,<3
+strawberry-graphql[fastapi]>=0.246
+neo4j>=5.25
+
+# Hybrid semantic RAG
+qdrant-client>=1.9,<2
+sentence-transformers>=3.0,<6

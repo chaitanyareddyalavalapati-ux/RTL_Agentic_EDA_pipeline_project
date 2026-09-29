@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -m 2 http://127.0.0.1:8000/health)",
+      "Bash(curl -s -X POST http://127.0.0.1:8000/api/design -H 'Content-Type: application/json' -d '{\"prompt\":\"Create a 4 bit adder and run the complete EDA flow.\"}')",
+      "Bash(kill -9 11895)",
+      "Bash(lsof -iTCP:8000 -sTCP:LISTEN)"
+    ]
+  }
+}

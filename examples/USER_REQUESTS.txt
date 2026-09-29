@@ -1,0 +1,15 @@
+Create a 1-bit half adder.
+Create a 1-bit full adder.
+Create a 4-bit adder with carry-in and carry-out.
+Create an 8-bit adder.
+Create a 4-bit comparator.
+Create a 4-to-1 multiplexer.
+Create a 3-to-8 decoder.
+Create an 8-bit up/down counter.
+Create a mod-10 counter.
+Create a shift register.
+Create a 6-bit-wide RAM with configurable depth.
+Create a small FIFO.
+Create a 4-bit ALU supporting add, subtract, AND and OR.
+Create a 4 bit adder and run the complete EDA flow.
+Create a 6 bit RAM and run the complete EDA flow.
